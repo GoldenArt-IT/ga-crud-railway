@@ -1,8 +1,9 @@
 import streamlit as st
 from sqlalchemy import create_engine, text
+import os
 
 # Connect to DB
-db_url = st.secrets["db_url"]  # Secure with .streamlit/secrets.toml
+db_url = os.getenv("db_url")
 engine = create_engine(db_url)
 
 # CRUD Functions
